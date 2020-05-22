@@ -15,6 +15,7 @@ import java.io.*;
 public class Main {
     public static void main(String[] args) throws Exception {
         ChislaLanguageLexer lexer = null;
+
         try {
             lexer = new ChislaLanguageLexer(new ANTLRFileStream("while.math"));
             ChislaLanguageParser parser = new ChislaLanguageParser(new CommonTokenStream(lexer));
@@ -22,9 +23,8 @@ public class Main {
             ChislaLanguageVisitor chislaGrammarVisitor = new Visitor("while.math");
             String output = (String) chislaGrammarVisitor.visit(tree);
             PrintWriter printer = null;
-            printer = new PrintWriter("MainMath.java");
+            printer = new PrintWriter("compiled/mathlangMain.java");
             printer.print(output);
-            int a = 5;
             printer.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -32,5 +32,4 @@ public class Main {
             e.printStackTrace();
         }
     }
-
 }

@@ -1,0 +1,20 @@
+MAIN
+BEGIN
+    INTEGER a = 9;
+    FLOAT b = 3.22;
+    FLOAT e = b + 2.28;
+    IF (e>=b)
+    BEGIN
+        PRINT e;
+    END
+        ELSE
+        BEGIN
+            PRINT b;
+        END
+    FOR (b=0; b<5; b++)
+    BEGIN
+        a=b;
+        PRINT a;
+    END
+END
+

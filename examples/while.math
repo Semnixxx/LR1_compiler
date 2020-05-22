@@ -1,17 +1,10 @@
-FUNCTION printing (INTEGER data)
-BEGIN
-    PRINT data;
-END
-
 MAIN
 BEGIN
-    INTEGER a = 9;
-    FLOAT b = 3.22;
-    WHILE (b>0)
-      BEGIN
-          b=b-1;
-          PRINT b;
-      END
-    printing(a);
+    INTEGER a = 11;
+    WHILE (a < 12/2)
+    BEGIN
+      a = a - 1;
+      PRINT a;
+    END
 END
 

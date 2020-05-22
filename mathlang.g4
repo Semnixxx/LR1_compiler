@@ -1,9 +1,5 @@
 grammar mathlang;
 
-@header {
-package compiler.grammar;
-}
-
 MAIN : 'MAIN';
 FUNCTION : 'FUNCTION';
 RETURN : 'RETURN';
@@ -30,8 +26,6 @@ OANGLEBR : '<';
 EQOANGLEBR : '<=';
 CANGLEBR : '>';
 EQCANGLEBR : '>=';
-OBRACKET : '{';
-CBRACKET : '}';
 COLON : ':';
 
 
@@ -40,13 +34,12 @@ INCR : '++';
 DECR : '--';
 EQ : '==';
 NEQ : '!=';
-IS : 'is';
+IS : 'IS';
 MOD : '%' ;
 MUL : '*' ;
 DIV : '/' ;
 ADD : '+' ;
 SUB : '-' ;
-IN : 'in';
 POW: '^';
 ASSIGN : '=';
 
@@ -72,7 +65,7 @@ condition_block         : OPAR (NEGATION)? condition CPAR stat_block;
 stat_block              : BEGIN start END;
 while_stat              : WHILE condition_block;
 for_stat                : FOR OPAR condition_for CPAR stat_block;
-condition_for           : ID ASSIGN expr SEMICOLON condition SEMICOLON ID oper=(INCR|DECR)      # forCond;
+condition_for           : ID ASSIGN expr SEMICOLON condition SEMICOLON ID oper=(INCR | DECR)      # forCond;
 function_call           : ID param_call SEMICOLON;
 print                   : PRINT print_expr SEMICOLON;
 param_call              : OPAR (arg_call)? CPAR;
@@ -90,10 +83,10 @@ condition
     | ID IS type                                                                            # checkType;
 arg_call
     : ID                # paramCallArg
-    | ID ',' arg_call   # paramCallArgs;
+    | ID ', ' arg_call  # paramCallArgs;
 arg
     : type ID           # paramArg
-    | type ID ',' arg   # paramArgs;
+    | type ID ', ' arg  # paramArgs;
 function
     : FUNCTION ID param stat_block                      # voidFunction
     | FUNCTION type ID param stat_block_with_return     # returnFunction;

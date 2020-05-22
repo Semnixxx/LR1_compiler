@@ -1,0 +1,9 @@
+MAIN
+BEGIN
+    INTEGER a = 0;
+    FOR (b = 0; b < 5; b++)
+    BEGIN
+        a = a + b;
+        PRINT a;
+    END
+END

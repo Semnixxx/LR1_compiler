@@ -1,0 +1,18 @@
+FUNCTION INTEGER add_and_MoooOOooD(INTEGER b)
+BEGIN
+    INTEGER a = b + 1;
+    FLOAT ab = a + b;
+    ab = ab % b;
+    INTEGER abb = (INTEGER) ab;
+    RETURN abb;
+END
+
+MAIN
+BEGIN
+    INTEGER a = 11;
+    INTEGER bb = 101010;
+    a = add_and_MoooOOooD(bb);
+
+    PRINT bb;
+END
+

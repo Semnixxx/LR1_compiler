@@ -1,0 +1,8 @@
+INTEGER i = 0;
+FLOAT D_d = 11.;
+
+MAIN
+BEGIN
+    INTEGER aaa = i % D_d;
+    PRINT aaa;
+END

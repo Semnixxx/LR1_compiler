@@ -12,8 +12,12 @@ import org.antlr.v4.runtime.tree.ParseTree;
 
 import java.io.*;
 
-public class Main {
-    public static void main(String[] args) throws Exception {
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.Test;
+
+public class MathlangTests {
+    @Test
+    public void whileTest() throws Exception {
         ChislaLanguageLexer lexer = null;
 
         try {
